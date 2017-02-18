@@ -1,0 +1,210 @@
+////////////// settings //////////////
+// responsive settings
+$small-screen: 320px;
+$large-mobile: 412px;
+$medium-screen: 768px;
+$large-screen: 1024px;
+$x-large-screen: 1194px;
+$x-x-large-screen: 1440px;
+// constants for spatial relationships
+$hero-height-sm-up: 300px;
+$hero-height-md-up: 350px;
+$hero-height-lg-up: 400px;
+$footer-height: 40px;
+$padding-margin-standard: 10px;
+// z-indexes
+$z-index-hero: 1;
+$z-index-footer: 3;
+$z-index-modal: 998;
+$z-index-modal-close: 999;
+// transitions
+$common-transition: 0.3s;
+// colors
+$color-footer: darkgrey;
+$color-hover: gold;
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-width: $small-screen;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+////////////// hero //////////////
+
+#hero {
+  background-image: url('http://placekitten.com/1200/800');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  z-index: $z-index-hero;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media(min-width: $small-screen) {
+    height: $hero-height-sm-up;
+  }
+
+  @media(min-width: $medium-screen) {
+    height: $hero-height-md-up;
+  }
+
+  @media(min-width: $large-screen) {
+    height: $hero-height-lg-up;
+  }
+}
+
+.title-hero {
+  color: white;
+
+  @media(min-width: $small-screen) {
+    font-size: 28px;
+  }
+
+  @media(min-width: $large-mobile) {
+    font-size: 38px;
+  }
+
+  @media(min-width: $medium-screen) {
+    font-size: 60px;
+  }
+
+  @media(min-width: $large-screen) {
+    font-size: 80px;
+  }
+}
+
+////////////// main content //////////////
+
+#main-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+  padding: 10px;
+}
+
+////////////// modal //////////////
+
+.modal-trigger {
+  width: 50px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z-index-modal;
+  background-color: hsla(0, 0%, 10%, 0.9);
+
+  &.active {
+    // display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.wrapper-modal-content {
+  height: 50%;
+  width: 50%;
+  background-color: lightgrey;
+}
+
+.modal-close {
+  @media(max-width: $large-mobile) {
+    width: 50px;
+    height: 50px;
+    border-radius: 36px;
+    font-size: 36px;
+    line-height: 3.25rem;
+  }
+
+  opacity: 0.8;
+  background-color: rgb(100, 100, 100);
+  color: rgb(183, 183, 183);
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 20px;
+  padding: 2px;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  z-index: $z-index-modal-close;
+
+  &:hover {
+    background-color: grey;
+    color: white;
+  }
+}
+
+////////////// footer //////////////
+
+#footer {
+  height: $footer-height;
+  z-index: $z-index-footer;
+  background-color: $color-footer;
+  padding: $padding-margin-standard;
+}
+
+.footer-left,
+.footer-right {
+  color: white;
+}
+
+.footer-left {
+  float: left;
+  margin: 8px 0;
+}
+
+.footer-right {
+  float: right;
+  margin: 5px 0;
+}
+
+.footer-link {
+  color: white;
+  transition: 0.3s;
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover {
+    color: $color-hover;
+  }
+
+  @media(min-width: $small-screen) {
+    margin: 0 4px;
+  }
+
+  @media(min-width: $medium-screen) {
+    margin: 0 10px;
+  }
+}
+
+.copyright-link {
+  text-decoration: none;
+
+  &:visited {
+    color: white;
+  }
+
+  &:hover {
+    color: $color-hover
+  }
+}

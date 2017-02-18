@@ -1,0 +1,193 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+#hero {
+  background-image: url("http://placekitten.com/1200/800");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  z-index: 1;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+@media (min-width: 320px) {
+  #hero {
+    height: 300px;
+  }
+}
+@media (min-width: 768px) {
+  #hero {
+    height: 350px;
+  }
+}
+@media (min-width: 1024px) {
+  #hero {
+    height: 400px;
+  }
+}
+
+.title-hero {
+  color: white;
+}
+@media (min-width: 320px) {
+  .title-hero {
+    font-size: 28px;
+  }
+}
+@media (min-width: 412px) {
+  .title-hero {
+    font-size: 38px;
+  }
+}
+@media (min-width: 768px) {
+  .title-hero {
+    font-size: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .title-hero {
+    font-size: 80px;
+  }
+}
+
+#main-content {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
+  -ms-flex: 1;
+      flex: 1;
+  padding: 10px;
+}
+
+.modal-trigger {
+  width: 50px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  background-color: rgba(26, 26, 26, 0.9);
+}
+.modal.active {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.wrapper-modal-content {
+  height: 50%;
+  width: 50%;
+  background-color: lightgrey;
+}
+
+.modal-close {
+  opacity: 0.8;
+  background-color: #646464;
+  color: #b7b7b7;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  font-size: 24px;
+  border-radius: 20px;
+  padding: 2px;
+  font-weight: bold;
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  z-index: 999;
+}
+@media (max-width: 412px) {
+  .modal-close {
+    width: 50px;
+    height: 50px;
+    border-radius: 36px;
+    font-size: 36px;
+    line-height: 3.25rem;
+  }
+}
+.modal-close:hover {
+  background-color: grey;
+  color: white;
+}
+
+#footer {
+  height: 40px;
+  z-index: 3;
+  background-color: darkgrey;
+  padding: 10px;
+}
+
+.footer-left,
+.footer-right {
+  color: white;
+}
+
+.footer-left {
+  float: left;
+  margin: 8px 0;
+}
+
+.footer-right {
+  float: right;
+  margin: 5px 0;
+}
+
+.footer-link {
+  color: white;
+  transition: 0.3s;
+}
+.footer-link:visited {
+  color: white;
+}
+.footer-link:hover {
+  color: gold;
+}
+@media (min-width: 320px) {
+  .footer-link {
+    margin: 0 4px;
+  }
+}
+@media (min-width: 768px) {
+  .footer-link {
+    margin: 0 10px;
+  }
+}
+
+.copyright-link {
+  text-decoration: none;
+}
+.copyright-link:visited {
+  color: white;
+}
+.copyright-link:hover {
+  color: gold;
+}
