@@ -10,7 +10,7 @@ body {
       flex-direction: column;
 }
 
-#hero {
+.hero {
   background-image: url("http://placekitten.com/1200/800");
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,46 +26,46 @@ body {
       justify-content: center;
 }
 @media (min-width: 320px) {
-  #hero {
+  .hero {
     height: 300px;
   }
 }
 @media (min-width: 768px) {
-  #hero {
+  .hero {
     height: 350px;
   }
 }
 @media (min-width: 1024px) {
-  #hero {
+  .hero {
     height: 400px;
   }
 }
 
-.title-hero {
+.hero__title {
   color: white;
 }
 @media (min-width: 320px) {
-  .title-hero {
+  .hero__title {
     font-size: 28px;
   }
 }
 @media (min-width: 412px) {
-  .title-hero {
+  .hero__title {
     font-size: 38px;
   }
 }
 @media (min-width: 768px) {
-  .title-hero {
+  .hero__title {
     font-size: 60px;
   }
 }
 @media (min-width: 1024px) {
-  .title-hero {
+  .hero__title {
     font-size: 80px;
   }
 }
 
-#main-content {
+.main-content {
   height: 100%;
   display: -ms-flexbox;
   display: flex;
@@ -77,8 +77,10 @@ body {
   padding: 10px;
 }
 
-.modal-trigger {
-  width: 50px;
+.modal__wrapper-modal-content {
+  height: 50%;
+  width: 50%;
+  background-color: lightgrey;
 }
 
 .modal {
@@ -102,13 +104,11 @@ body {
       justify-content: center;
 }
 
-.wrapper-modal-content {
-  height: 50%;
-  width: 50%;
-  background-color: lightgrey;
+.modal__trigger {
+  width: 50px;
 }
 
-.modal-close {
+.modal__close {
   opacity: 0.8;
   background-color: #646464;
   color: #b7b7b7;
@@ -126,7 +126,7 @@ body {
   z-index: 999;
 }
 @media (max-width: 412px) {
-  .modal-close {
+  .modal__close {
     width: 50px;
     height: 50px;
     border-radius: 36px;
@@ -134,50 +134,50 @@ body {
     line-height: 3.25rem;
   }
 }
-.modal-close:hover {
+.modal__close:hover {
   background-color: grey;
   color: white;
 }
 
-#footer {
+.footer {
   height: 40px;
   z-index: 3;
   background-color: darkgrey;
   padding: 10px;
 }
 
-.footer-left,
-.footer-right {
+.footer__left,
+.footer__right {
   color: white;
 }
 
-.footer-left {
+.footer__left {
   float: left;
   margin: 8px 0;
 }
 
-.footer-right {
+.footer__right {
   float: right;
   margin: 5px 0;
 }
 
-.footer-link {
+.footer__link {
   color: white;
   transition: 0.3s;
 }
-.footer-link:visited {
+.footer__link:visited {
   color: white;
 }
-.footer-link:hover {
+.footer__link:hover {
   color: gold;
 }
 @media (min-width: 320px) {
-  .footer-link {
+  .footer__link {
     margin: 0 4px;
   }
 }
 @media (min-width: 768px) {
-  .footer-link {
+  .footer__link {
     margin: 0 10px;
   }
 }

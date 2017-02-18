@@ -4,11 +4,11 @@ $(document).ready(function(){
   // NB: starter code for modal that overlays entire window
   const modal = $('.modal');
 
-   $('.modal-trigger').click(function(e) {
+   $('.modal__trigger').click(function(e) {
     modal.addClass('active');
   });
 
-  $('.modal-close').click(function() {
+  $('.modal__close').click(function() {
     $('.modal').removeClass('active');
   });
 });

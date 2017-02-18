@@ -35,7 +35,7 @@ body {
 
 ////////////// hero //////////////
 
-#hero {
+.hero {
   background-image: url('http://placekitten.com/1200/800');
   background-repeat: no-repeat;
   background-size: cover;
@@ -59,7 +59,7 @@ body {
   }
 }
 
-.title-hero {
+.hero__title {
   color: white;
 
   @media(min-width: $small-screen) {
@@ -81,7 +81,7 @@ body {
 
 ////////////// main content //////////////
 
-#main-content {
+.main-content {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -91,9 +91,10 @@ body {
 }
 
 ////////////// modal //////////////
-
-.modal-trigger {
-  width: 50px;
+.modal__wrapper-modal-content {
+  height: 50%;
+  width: 50%;
+  background-color: lightgrey;
 }
 
 .modal {
@@ -115,13 +116,11 @@ body {
   }
 }
 
-.wrapper-modal-content {
-  height: 50%;
-  width: 50%;
-  background-color: lightgrey;
+.modal__trigger {
+  width: 50px;
 }
 
-.modal-close {
+.modal__close {
   @media(max-width: $large-mobile) {
     width: 50px;
     height: 50px;
@@ -154,29 +153,29 @@ body {
 
 ////////////// footer //////////////
 
-#footer {
+.footer {
   height: $footer-height;
   z-index: $z-index-footer;
   background-color: $color-footer;
   padding: $padding-margin-standard;
 }
 
-.footer-left,
-.footer-right {
+.footer__left,
+.footer__right {
   color: white;
 }
 
-.footer-left {
+.footer__left {
   float: left;
   margin: 8px 0;
 }
 
-.footer-right {
+.footer__right {
   float: right;
   margin: 5px 0;
 }
 
-.footer-link {
+.footer__link {
   color: white;
   transition: 0.3s;
 
