@@ -1,13 +1,4 @@
-html {
-  box-sizing: border-box;
-}
-
-*, *::after, *::before {
-  box-sizing: inherit;
-}
-
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   min-width: 320px;
@@ -19,14 +10,38 @@ body {
 }
 
 .serif {
-  font-family: serif;
   text-transform: uppercase;
+  font-family: "Quattrocento";
+  font-weight: bold;
 }
 
 .title,
 .copy {
   padding: 10px;
   margin: 0 20px;
+  transition: 0.3s;
+}
+
+.title {
+  font-size: 20px;
+  letter-spacing: 2.25px;
+}
+@media (min-width: 1024px) {
+  .title {
+    font-size: 24px;
+  }
+}
+
+.copy {
+  font-size: 14px;
+  font-family: "Montserrat", serif;
+  letter-spacing: .25px;
+  line-height: 1.5;
+}
+@media (min-width: 1024px) {
+  .copy {
+    font-size: 18px;
+  }
 }
 
 .copy-wrapper {
@@ -63,13 +78,23 @@ body {
 }
 
 .section--alt {
-  margin: 50px 0;
-  background-color: lightgrey;
+  margin: 0;
+}
+
+@media (min-width: 320px) {
+  .section--buffered {
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 768px) {
+  .section--buffered {
+    margin-bottom: 150px;
+  }
 }
 
 @media (min-width: 320px) {
   .section--tall {
-    margin: 20px 0;
+    margin: 40px 0;
   }
 }
 @media (min-width: 768px) {
@@ -83,6 +108,9 @@ body {
       justify-content: space-between;
 }
 
+.section--mobile-collapse {
+  transition: 0.3s;
+}
 @media (min-width: 320px) {
   .section--mobile-collapse {
     -ms-flex-direction: column;
@@ -138,6 +166,9 @@ body {
       flex-direction: row;
 }
 
+.section--intro__title-wrapper {
+  transition: 0.3s;
+}
 @media (min-width: 320px) {
   .section--intro__title-wrapper {
     width: 100%;
@@ -152,13 +183,16 @@ body {
 .section--intro__title__L {
   color: white;
   background-color: black;
-  font-size: 32px;
+  font-size: 36px;
   padding: 10px 0;
+  letter-spacing: 3px;
 }
 
 .section--intro__title__R {
+  font-family: "Montserrat";
   font-size: 18px;
   text-transform: uppercase;
+  letter-spacing: .5px;
   padding: 15px 0;
 }
 
@@ -167,9 +201,39 @@ body {
   text-align: center;
 }
 
+.title--section-2 {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-flex: 1;
+      flex: 1;
+  margin-top: 20px;
+}
+
+.copy--section-2 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex: 2;
+      flex: 2;
+  margin-bottom: 50px;
+}
+
 @media (max-width: 768px) {
   .subsection--33pct[data-thirds="C-img"] {
     display: none;
+  }
+}
+
+.copy--final {
+  padding-bottom: 50px;
+}
+
+.title--final {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .title--final {
+    padding-bottom: 40px;
   }
 }
 
@@ -279,6 +343,7 @@ body {
 }
 
 .copyright-link {
+  font-family: "Quattrocento";
   text-decoration: none;
 }
 .copyright-link:visited {
