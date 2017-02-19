@@ -157,6 +157,21 @@ body {
   height: 100%;
 }
 
+.underlay-image-wrapper {
+  position: relative;
+}
+
+.underlay-image-wrapper__underlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: skyblue;
+  z-index: -1;
+}
+
 .section--intro {
   -ms-flex-pack: center;
       justify-content: center;
@@ -302,7 +317,7 @@ body {
 .footer {
   height: 40px;
   z-index: 3;
-  background-color: darkgrey;
+  background-color: black;
   padding: 10px;
 }
 
