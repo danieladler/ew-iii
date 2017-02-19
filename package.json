@@ -22,6 +22,7 @@
     "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-ruby-sass": "^2.1.1",
+    "node-neat": "^1.7.2",
     "nodemon": "^1.11.0"
   },
   "engines": {

@@ -1,4 +1,3 @@
-@import 'avalanche';
 ////////////// settings //////////////
 // responsive settings
 $small-screen: 320px;
@@ -8,9 +7,6 @@ $large-screen: 1024px;
 $x-large-screen: 1194px;
 $x-x-large-screen: 1440px;
 // constants for spatial relationships
-$hero-height-sm-up: 300px;
-$hero-height-md-up: 350px;
-$hero-height-lg-up: 400px;
 $footer-height: 40px;
 $padding-margin-standard: 10px;
 $min-height-section: 400px;
@@ -22,11 +18,9 @@ $z-index-modal-close: 999;
 // transitions
 $common-transition: 0.3s;
 // colors
-$color-footer: darkgrey;
 $color-hover: gold;
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   min-width: $small-screen;
@@ -38,18 +32,39 @@ body {
 ////////////// typography //////////////
 
 .serif {
-  font-family: serif;
   text-transform: uppercase;
+  font-family: "Quattrocento";
+  font-weight: bold;
 }
 
 .title,
 .copy {
   padding: 10px;
-  margin: 0 40px;
+  margin: 0 20px;
+  transition: 0.3s;
 }
 
-.section__copy-wrapper {
-  // min-height: $min-height-section;
+.title {
+  font-size: 20px;
+  letter-spacing: 2.25px;
+
+  @media(min-width: $large-screen) {
+    font-size: 24px;
+  }
+}
+
+.copy {
+  font-size: 14px;
+  font-family: "Montserrat", serif;
+  letter-spacing: .25px;
+  line-height: 1.5;
+
+  @media(min-width: $large-screen) {
+    font-size: 18px;
+  }
+}
+
+.copy-wrapper {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -67,25 +82,82 @@ body {
   flex: 1;
 }
 
+////////////// generic block/element/modifier classes //////////////
+
 .section {
   width: 100%;
   height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: row;
 }
 
 .section--alt {
-  margin: 50px 0;
-  // NB: development-only, to set apart w/ bkgd color
-  background-color: lightgrey;
+  margin: 0;
 }
 
-.section--intro {
-  // TBD
+.section--buffered {
+  @media(min-width: $small-screen) {
+    margin-bottom: 50px;
+  }
+
+  @media(min-width: $medium-screen) {
+    margin-bottom: 150px;
+  }
 }
 
 .section--tall {
-  // height: 600px;
-  margin: 100px 0;
+  @media(min-width: $small-screen) {
+    margin: 40px 0;
+  }
+
+  @media(min-width: $medium-screen) {
+    margin: 100px 0;
+  }
+}
+
+.section--thirds {
+  justify-content: space-between;
+}
+
+.section--mobile-collapse {
+  transition: 0.3s;
+
+  @media(min-width: $small-screen) {
+    flex-direction: column;
+  }
+
+  @media(min-width: $medium-screen) {
+    flex-direction: row;
+  }
+}
+
+.subsection--33pct {
+  @media(min-width: $medium-screen) {
+    width: 33%;
+  }
+}
+
+.subsection--40pct {
+  @media(min-width: $medium-screen) {
+    width: 40%;
+  }
+}
+
+.subsection--50pct {
+  @media(min-width: $medium-screen) {
+    width: 50%;
+  }
+}
+
+.subsection--60pct {
+  @media(min-width: $medium-screen) {
+    width: 60%;
+  }
+}
+
+.subsection--100pct {
+  width: 100%;
 }
 
 .section__image {
@@ -93,13 +165,55 @@ body {
   height: 100%;
 }
 
-.section__image--full-height {
-  // height: $min-height-section
+.underlay-image-wrapper {
+  position: relative;
 }
 
-.section__image--80pct-height {
-  // height: ($min-height-section * .8);
-  // padding: ($min-height-section * .2);
+.underlay-image-wrapper__underlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: skyblue;
+  z-index: -1;
+}
+
+////////////// 1 - intro classes //////////////
+
+.section--intro {
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+.section--intro__title-wrapper {
+  transition: 0.3s;
+
+  @media(min-width: $small-screen) {
+    width: 100%;
+  }
+
+  @media(min-width: $medium-screen) {
+    width: 50%;
+  }
+}
+
+.section--intro__title__L {
+  color: white;
+  background-color: black;
+  font-size: 36px;
+  padding: 10px 0;
+  letter-spacing: 3px;
+}
+
+.section--intro__title__R {
+  font-family: "Montserrat";
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  padding: 15px 0;
 }
 
 .section--intro__title__L,
@@ -107,17 +221,52 @@ body {
   text-align: center;
 }
 
-.section--intro__title__L {
-  color: white;
-  background-color: black;
-  font-size: 32px;
-  padding: 10px 0;
+////////////// 2 - EW III Reveal classes //////////////
+
+.title--section-2 {
+    align-self: flex-start;
+    flex: 1;
+    margin-top: 20px;
 }
 
-.section--intro__title__R {
-  font-size: 18px;
-  text-transform: uppercase;
-  padding: 15px 0;
+.copy--section-2 {
+  align-self: center;
+  flex: 2;
+  margin-bottom: 50px;
+}
+
+////////////// 3 - Top-down Rendering classes //////////////
+////////////// 4 - Interior Images classes //////////////
+.subsection--33pct[data-thirds="A-img"] {
+  @media (max-width: $medium-screen) {
+    // TBD
+  }
+}
+
+.subsection--33pct[data-thirds="B-copy"] {
+  @media (max-width: $medium-screen) {
+    // order: 1
+  }
+}
+
+.subsection--33pct[data-thirds="C-img"] {
+  @media (max-width: $medium-screen) {
+    display: none;
+  }
+}
+////////////// 5 - Full-width Image classes //////////////
+////////////// 6 - Final Pamphlet Section classes //////////////
+
+.copy--final {
+  padding-bottom: 50px;
+}
+
+.title--final {
+  width: 100%;
+
+  @media(max-width: $medium-screen) {
+    padding-bottom:40px;
+  }
 }
 
 ////////////// modal //////////////
@@ -186,7 +335,7 @@ body {
 .footer {
   height: $footer-height;
   z-index: $z-index-footer;
-  background-color: $color-footer;
+  background-color: black;
   padding: $padding-margin-standard;
 }
 
@@ -227,6 +376,7 @@ body {
 }
 
 .copyright-link {
+  font-family: "Quattrocento";
   text-decoration: none;
 
   &:visited {
