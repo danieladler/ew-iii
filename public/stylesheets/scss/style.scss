@@ -1,3 +1,4 @@
+@import 'avalanche';
 ////////////// settings //////////////
 // responsive settings
 $small-screen: 320px;
@@ -12,6 +13,7 @@ $hero-height-md-up: 350px;
 $hero-height-lg-up: 400px;
 $footer-height: 40px;
 $padding-margin-standard: 10px;
+$max-height-section: 400px;
 // z-indexes
 $z-index-hero: 1;
 $z-index-footer: 3;
@@ -33,50 +35,23 @@ body {
   flex-direction: column;
 }
 
-////////////// hero //////////////
+////////////// typography //////////////
 
-.hero {
-  background-image: url('http://placekitten.com/1200/800');
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  z-index: $z-index-hero;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  @media(min-width: $small-screen) {
-    height: $hero-height-sm-up;
-  }
-
-  @media(min-width: $medium-screen) {
-    height: $hero-height-md-up;
-  }
-
-  @media(min-width: $large-screen) {
-    height: $hero-height-lg-up;
-  }
+.serif {
+  font-family: serif;
+  text-transform: uppercase;
 }
 
-.hero__title {
-  color: white;
+.title {
+  padding: 10px;
+}
 
-  @media(min-width: $small-screen) {
-    font-size: 28px;
-  }
+.copy {
+  padding: 10px;
+}
 
-  @media(min-width: $large-mobile) {
-    font-size: 38px;
-  }
-
-  @media(min-width: $medium-screen) {
-    font-size: 60px;
-  }
-
-  @media(min-width: $large-screen) {
-    font-size: 80px;
-  }
+.section__copy-wrapper {
+  max-height: $max-height-section;
 }
 
 ////////////// main content //////////////
@@ -87,7 +62,49 @@ body {
   flex-direction: column;
   position: relative;
   flex: 1;
-  padding: 10px;
+  padding: 10px 0;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+// NB: development-only, to set apart w/ bkgd color
+.section--alt {
+  background-color: lightgrey;
+}
+
+.section--intro {
+  // TBD
+}
+
+.section--tall {
+  height: 600px;
+}
+
+.section__image {
+  width: 100%;
+  max-height: $max-height-section;
+}
+
+.section--intro__title__L,
+.section--intro__title__R {
+  text-align: center;
+}
+
+.section--intro__title__L {
+  color: white;
+  background-color: black;
+  font-size: 32px;
+  padding: 10px 0;
+}
+
+.section--intro__title__R {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 15px 0;
 }
 
 ////////////// modal //////////////
