@@ -2,7 +2,9 @@
 // responsive settings
 $small-screen: 320px;
 $large-mobile: 412px;
+$mobile-medium-midpoint: 661px;
 $medium-screen: 768px;
+$medium-plus-screen: 818px;
 $large-screen: 1024px;
 $x-large-screen: 1194px;
 $x-x-large-screen: 1440px;
@@ -40,7 +42,7 @@ body {
 .title,
 .copy {
   padding: 10px;
-  margin: 0 20px;
+  margin: 10px 0px;
   transition: 0.3s;
 }
 
@@ -89,7 +91,6 @@ body {
   height: 100%;
   margin: 0;
   display: flex;
-  flex-direction: row;
 }
 
 .section--alt {
@@ -98,11 +99,11 @@ body {
 
 .section--buffered {
   @media(min-width: $small-screen) {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   @media(min-width: $medium-screen) {
-    margin-bottom: 150px;
+    margin-bottom: 80px;
   }
 }
 
@@ -127,31 +128,49 @@ body {
     flex-direction: column;
   }
 
-  @media(min-width: $medium-screen) {
+  @media(min-width: $mobile-medium-midpoint) {
     flex-direction: row;
   }
 }
 
-.subsection--33pct {
-  @media(min-width: $medium-screen) {
-    width: 33%;
+.section--medium-collapse {
+  transition: 0.3s;
+
+  @media(min-width: $small-screen) {
+    flex-direction: column;
+  }
+
+  @media(min-width: $mobile-medium-midpoint) {
+    flex-direction: row;
   }
 }
 
+.subsection {
+  transition: 0.3s;
+
+  @media(min-width: $small-screen) {
+    width: 100%;
+  }
+}
+
+.subsection--33pct {
+  // TBD
+}
+
 .subsection--40pct {
-  @media(min-width: $medium-screen) {
+  @media(min-width: $mobile-medium-midpoint) {
     width: 40%;
   }
 }
 
 .subsection--50pct {
-  @media(min-width: $medium-screen) {
+  @media(min-width: $mobile-medium-midpoint) {
     width: 50%;
   }
 }
 
 .subsection--60pct {
-  @media(min-width: $medium-screen) {
+  @media(min-width: $mobile-medium-midpoint) {
     width: 60%;
   }
 }
@@ -233,25 +252,52 @@ body {
   align-self: center;
   flex: 2;
   margin-bottom: 50px;
+
+  @media(min-width: $small-screen) {
+    margin-bottom: 10px;
+  }
+
+  @media(min-width: $medium-screen) {
+    margin-bottom: 50px;
+  }
 }
 
 ////////////// 3 - Top-down Rendering classes //////////////
+.subsection--section-3 {
+  @media(max-width: $mobile-medium-midpoint) {
+    order: 1;
+  }
+}
+
 ////////////// 4 - Interior Images classes //////////////
 .subsection--33pct[data-thirds="A-img"] {
-  @media (max-width: $medium-screen) {
-    // TBD
+  @media (min-width: $small-screen) {
+    display: none;
+  }
+
+  @media(min-width: $medium-plus-screen) {
+    width: 33%;
+    display: block;
   }
 }
 
 .subsection--33pct[data-thirds="B-copy"] {
-  @media (max-width: $medium-screen) {
-    // order: 1
+  @media (min-width: $small-screen) {
+    width: 100%;
+  }
+
+  @media(min-width: $medium-plus-screen) {
+    width: 33%;
   }
 }
 
 .subsection--33pct[data-thirds="C-img"] {
-  @media (max-width: $medium-screen) {
-    display: none;
+  @media (min-width: $small-screen) {
+    width: 100%;
+  }
+
+  @media(min-width: $medium-plus-screen) {
+    width: 33%;
   }
 }
 ////////////// 5 - Full-width Image classes //////////////
@@ -262,8 +308,6 @@ body {
 }
 
 .title--final {
-  width: 100%;
-
   @media(max-width: $medium-screen) {
     padding-bottom:40px;
   }
@@ -346,7 +390,16 @@ body {
 
 .footer__left {
   float: left;
-  margin: 8px 0;
+
+  @media(min-width: $small-screen) {
+    font-size: 12px;
+    margin: 12px 0;
+  }
+
+  @media(min-width: $medium-screen) {
+    font-size: 16px;
+    margin: 8px 0;
+  }
 }
 
 .footer__right {
@@ -368,10 +421,18 @@ body {
 
   @media(min-width: $small-screen) {
     margin: 0 4px;
+
+    i {
+      font-size: 1.5em;
+    }
   }
 
-  @media(min-width: $medium-screen) {
+  @media(min-width: $large-mobile) {
     margin: 0 10px;
+
+    i {
+      font-size: 2em;
+    }
   }
 }
 
