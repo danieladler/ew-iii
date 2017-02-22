@@ -18,8 +18,13 @@ body {
 .title,
 .copy {
   padding: 10px;
-  margin: 10px 0px;
   transition: 0.3s;
+}
+@media (min-width: 768px) {
+  .title,
+  .copy {
+    margin: 10px 0px;
+  }
 }
 
 .title {
@@ -54,6 +59,12 @@ body {
       justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  padding: 0 20px;
+}
+
+.hr--50pct {
+  width: 50%;
+  margin: 40px auto;
 }
 
 .main-content {
@@ -86,18 +97,7 @@ body {
 }
 @media (min-width: 768px) {
   .section--buffered {
-    margin-bottom: 80px;
-  }
-}
-
-@media (min-width: 320px) {
-  .section--tall {
-    margin: 40px 0;
-  }
-}
-@media (min-width: 768px) {
-  .section--tall {
-    margin: 100px 0;
+    margin-bottom: 100px;
   }
 }
 
@@ -238,7 +238,16 @@ body {
       align-self: flex-start;
   -ms-flex: 1;
       flex: 1;
-  margin-top: 20px;
+}
+@media (min-width: 320px) {
+  .title--section-2 {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .title--section-2 {
+    margin-top: 50px;
+  }
 }
 
 .copy--section-2 {

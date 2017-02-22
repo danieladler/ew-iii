@@ -42,8 +42,11 @@ body {
 .title,
 .copy {
   padding: 10px;
-  margin: 10px 0px;
   transition: 0.3s;
+
+  @media(min-width: $medium-screen) {
+    margin: 10px 0px;
+  }
 }
 
 .title {
@@ -72,6 +75,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding: 0 20px;
+}
+
+.hr--50pct {
+  width: 50%;
+  margin: 40px auto;
 }
 
 ////////////// main content //////////////
@@ -103,18 +112,12 @@ body {
   }
 
   @media(min-width: $medium-screen) {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
   }
 }
 
 .section--tall {
-  @media(min-width: $small-screen) {
-    margin: 40px 0;
-  }
-
-  @media(min-width: $medium-screen) {
-    margin: 100px 0;
-  }
+  // TBD
 }
 
 .section--thirds {
@@ -245,7 +248,14 @@ body {
 .title--section-2 {
     align-self: flex-start;
     flex: 1;
-    margin-top: 20px;
+
+    @media(min-width: $small-screen) {
+      margin-top: 20px;
+    }
+
+    @media(min-width: $large-screen) {
+      margin-top: 50px;
+    }
 }
 
 .copy--section-2 {
