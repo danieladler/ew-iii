@@ -390,8 +390,8 @@ body {
 }
 
 .modal__wrapper-modal-content {
-  height: 50%;
-  width: 50%;
+  width: 80%;
+  margin: 0 auto;
   background-color: lightgrey;
 }
 
@@ -404,6 +404,7 @@ body {
   height: 100%;
   z-index: 998;
   background-color: rgba(26, 26, 26, 0.9);
+  font-family: "Quattrocento";
 }
 .modal.active {
   display: -ms-flexbox;
@@ -416,8 +417,53 @@ body {
       justify-content: center;
 }
 
+.modal__content {
+  padding: 0 10px;
+  overflow-y: auto;
+  max-height: calc(100vh - 110px);
+  background-color: whitesmoke;
+}
+
+.modal__title {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.modal__image {
+  margin-bottom: 10px;
+}
+
+.modal__image--top,
+.modal__wrapper-images-bottom {
+  width: 80%;
+  margin: 10px auto;
+  display: block;
+}
+
+@media (min-width: 320px) {
+  .modal__image--bottom {
+    display: block;
+    width: 100%;
+  }
+}
+@media (min-width: 700px) {
+  .modal__image--bottom {
+    display: inline-block;
+    width: 49%;
+    margin-left: 4px;
+  }
+}
+
+.modal__image--bottom:first-child {
+  margin-left: 0;
+}
+
 .modal__trigger {
-  width: 50px;
+  display: inline-block;
+}
+
+.modal__trigger:hover {
+  cursor: pointer;
 }
 
 .modal__close {
@@ -427,7 +473,7 @@ body {
   width: 28px;
   height: 28px;
   text-align: center;
-  font-size: 24px;
+  font-size: 26px;
   border-radius: 20px;
   padding: 2px;
   font-weight: bold;
@@ -449,6 +495,7 @@ body {
 .modal__close:hover {
   background-color: grey;
   color: white;
+  cursor: pointer;
 }
 
 .footer {
@@ -478,7 +525,7 @@ body {
     font-size: 8px;
   }
 }
-@media (min-width: 412px) {
+@media (min-width: 440px) {
   .copyright__text {
     font-size: 12px;
   }

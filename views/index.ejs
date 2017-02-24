@@ -10,6 +10,25 @@
     <script src="/javascripts/paperfold.js"></script>
   </head>
   <body>
+    <div class="modal">
+      <a class="modal__close"> X </a>
+      <div class="modal__wrapper-modal-content">
+        <div class="modal__content">
+          <h1 class="modal__title"> About EWIII </h1>
+          <div class="copy copy-modal">
+            Eugene Weston III, my maternal grandfather, was a third-generation architect who designed some really beautiful midcentury homes. When when I discovered a yellowing tri-fold pamphlet from the mid-50's describing his services, a lightbulb went off&#58; what if it was recreated word for word, film grain by film grain, but as a responsive web page? Here are some images of the original pamphlet:
+          </div>
+          <img class="modal__image modal__image--top" src="https://s3-us-west-2.amazonaws.com/ew-iii/original-1.jpg">
+          <div class="modal__wrapper-images-bottom">
+            <img class="modal__image modal__image--bottom" src="https://s3-us-west-2.amazonaws.com/ew-iii/original-2.jpg">
+            <img class="modal__image modal__image--bottom" src="https://s3-us-west-2.amazonaws.com/ew-iii/original-3.jpg">
+          </div>
+          <div class="copy copy-modal">
+            <strong>NB:</strong> I'm pretty sure the photographs were taken by Julius Shulman, so all credit for these beautiful images goes to him and his estate.
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="wrapper-main-content">
       <div class="main-content">
         <div class="content--landing">
@@ -145,7 +164,7 @@
         </div>
       </div>
       <div class="footer__right">
-        <a class="footer__link" data-footer-link="email"></a>
+        <a class="footer__link modal__trigger" href="#"><i class="fa fa-question fa-2x"></i></a>
         <a class="footer__link" href="http://www.github.com/danieladler"><i class="fa fa-github fa-2x"></i></a>
         <a class="footer__link" href="http://instagram.com/dadler"><i class="fa fa-instagram fa-2x"></i></a>
         <a class="footer__link" href="https://www.linkedin.com/in/daniel-adler-a45a5913/"><i class="fa fa-linkedin fa-2x"></i></a>
