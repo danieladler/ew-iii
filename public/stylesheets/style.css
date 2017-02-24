@@ -456,6 +456,7 @@ body {
   z-index: 3;
   background-color: black;
   padding: 10px;
+  font-family: "Quattrocento";
 }
 
 .footer__left,
@@ -465,17 +466,21 @@ body {
 
 .footer__left {
   float: left;
+  display: inline;
+}
+
+.copyright__text {
+  transition: 0.3s;
 }
 @media (min-width: 320px) {
-  .footer__left {
-    font-size: 12px;
-    margin: 12px 0;
+  .copyright__text {
+    margin: 4px 0;
+    font-size: 8px;
   }
 }
-@media (min-width: 768px) {
-  .footer__left {
-    font-size: 16px;
-    margin: 8px 0;
+@media (min-width: 412px) {
+  .copyright__text {
+    font-size: 12px;
   }
 }
 
@@ -503,6 +508,11 @@ body {
   }
 }
 @media (min-width: 412px) {
+  .footer__link i {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 768px) {
   .footer__link {
     margin: 0 10px;
   }

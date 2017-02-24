@@ -461,6 +461,7 @@ body {
   z-index: $z-index-footer;
   background-color: black;
   padding: $padding-margin-standard;
+  font-family: "Quattrocento";
 }
 
 .footer__left,
@@ -470,15 +471,19 @@ body {
 
 .footer__left {
   float: left;
+  display: inline;
+}
+
+.copyright__text {
+  transition: 0.3s;
 
   @media(min-width: $small-screen) {
-    font-size: 12px;
-    margin: 12px 0;
+    margin: 4px 0;
+    font-size: 8px;
   }
 
-  @media(min-width: $medium-screen) {
-    font-size: 16px;
-    margin: 8px 0;
+  @media(min-width: $large-mobile) {
+    font-size: 12px;
   }
 }
 
@@ -508,6 +513,12 @@ body {
   }
 
   @media(min-width: $large-mobile) {
+    i {
+      font-size: 1.5em;
+    }
+  }
+
+  @media(min-width: $medium-screen) {
     margin: 0 10px;
 
     i {
