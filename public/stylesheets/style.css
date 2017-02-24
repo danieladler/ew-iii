@@ -97,7 +97,7 @@ body {
   position: relative;
   margin: 0 auto;
   max-width: 1000px;
-  margin: 20px auto;
+  margin: 40px auto;
   background-color: #ffffff;
   z-index: 1;
 }
@@ -110,8 +110,14 @@ body {
   display: flex;
 }
 
-.section[data-section="foldable-first"] {
-  margin-top: 100px;
+@media (min-width: 661px) {
+  .section[data-section="foldable-first"] {
+    margin-top: 100px;
+  }
+}
+
+.section[data-section="foldable-last"] {
+  margin-bottom: 100px;
 }
 
 .section--alt {
@@ -225,6 +231,7 @@ body {
 @media (min-width: 320px) {
   .section--intro__title-wrapper {
     width: 100%;
+    height: 80px;
   }
 }
 @media (min-width: 768px) {
@@ -237,7 +244,7 @@ body {
   color: white;
   background-color: #2f2e2e;
   font-size: 36px;
-  padding: 10px 0;
+  padding: 20px 0;
   letter-spacing: 3px;
   width: 100%;
 }
@@ -249,6 +256,7 @@ body {
   letter-spacing: .5px;
   padding: 15px 30px 15px 0;
   position: absolute;
+  margin: 10px 0;
 }
 
 .section--intro__title__L,
@@ -259,7 +267,7 @@ body {
 .button--fold {
   position: absolute;
   right: -25px;
-  bottom: 5px;
+  bottom: 0;
   z-index: 3;
   width: 0;
   height: 0;
