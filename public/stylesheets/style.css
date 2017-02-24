@@ -91,15 +91,22 @@ body {
   -ms-flex: 1;
       flex: 1;
   background-color: transparent;
+  margin: 0 20px;
 }
 
 .main-content {
   position: relative;
-  margin: 0 auto;
   max-width: 1000px;
   margin: 40px auto;
   background-color: #ffffff;
   z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .wrapper-main-content,
+  .main-content {
+    margin: 0;
+  }
 }
 
 .section {
@@ -110,7 +117,7 @@ body {
   display: flex;
 }
 
-@media (min-width: 661px) {
+@media (min-width: 700px) {
   .section[data-section="foldable-first"] {
     margin-top: 100px;
   }
@@ -128,6 +135,11 @@ body {
   -ms-flex-pack: justify;
       justify-content: space-between;
 }
+@media (min-width: 700px) {
+  .section--thirds {
+    max-height: 325px;
+  }
+}
 
 .section--mobile-collapse {
   transition: 0.3s;
@@ -138,7 +150,7 @@ body {
         flex-direction: column;
   }
 }
-@media (min-width: 661px) {
+@media (min-width: 700px) {
   .section--mobile-collapse {
     -ms-flex-direction: row;
         flex-direction: row;
@@ -154,11 +166,15 @@ body {
         flex-direction: column;
   }
 }
-@media (min-width: 661px) {
+@media (min-width: 768px) {
   .section--medium-collapse {
     -ms-flex-direction: row;
         flex-direction: row;
   }
+}
+
+.subsection[data-subsection="subsection--last"] {
+  padding-right: 40px;
 }
 
 .subsection {
@@ -170,21 +186,26 @@ body {
   }
 }
 
-@media (min-width: 661px) {
+@media (min-width: 700px) {
   .subsection--40pct {
     width: 40%;
   }
 }
 
-@media (min-width: 661px) {
+@media (min-width: 700px) {
   .subsection--50pct {
     width: 50%;
   }
 }
 
-@media (min-width: 661px) {
+@media (min-width: 700px) {
   .subsection--60pct {
     width: 60%;
+  }
+}
+@media (max-width: 768px) {
+  .subsection--60pct {
+    min-width: 387px;
   }
 }
 
@@ -312,7 +333,7 @@ body {
   }
 }
 
-@media (max-width: 661px) {
+@media (max-width: 700px) {
   .subsection--section-3 {
     -ms-flex-order: 1;
         order: 1;
@@ -324,9 +345,10 @@ body {
     display: none;
   }
 }
-@media (min-width: 818px) {
+@media (min-width: 1024px) {
   .subsection--33pct[data-thirds="A-img"] {
     width: 33%;
+    min-width: 323px;
     display: block;
   }
 }
@@ -336,9 +358,12 @@ body {
     width: 100%;
   }
 }
-@media (min-width: 818px) {
+@media (min-width: 1024px) {
   .subsection--33pct[data-thirds="B-copy"] {
     width: 33%;
+  }
+  .subsection--33pct[data-thirds="B-copy"] .copy {
+    font-size: 16px;
   }
 }
 
@@ -350,6 +375,7 @@ body {
 @media (min-width: 818px) {
   .subsection--33pct[data-thirds="C-img"] {
     width: 33%;
+    min-width: 323px;
   }
 }
 
