@@ -31,5 +31,4 @@ $(document).ready(function(){
   setInterval(function() {
     shakeButton();
   }, 2000);
-
 });
