@@ -92,6 +92,7 @@ body {
       flex: 1;
   background-color: transparent;
   margin: 0 20px;
+  filter: brightness(1.025);
 }
 
 .main-content {

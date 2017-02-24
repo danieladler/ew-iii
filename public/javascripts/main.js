@@ -12,9 +12,10 @@ $(document).ready(function(){
     $('.modal').removeClass('active');
   });
 
-	var paperfold = $('.content--foldable').paperfold(
-    {folds: 5}
-  );
+	var paperfold = $('.content--foldable').paperfold({
+		folds: 3,
+		duration: 500
+	});
 
 	$('.button--fold').click(paperfold.toggle);
 });
