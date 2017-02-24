@@ -82,15 +82,19 @@ body {
   z-index: 2;
 }
 
-.main-content {
+.wrapper-main-content {
   height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
-  position: relative;
   -ms-flex: 1;
       flex: 1;
+  background-color: transparent;
+}
+
+.main-content {
+  position: relative;
   margin: 0 auto;
   max-width: 1000px;
   margin: 20px auto;
@@ -106,19 +110,12 @@ body {
   display: flex;
 }
 
-.section--alt {
-  margin: 0;
+.section[data-section="foldable-first"] {
+  margin-top: 100px;
 }
 
-@media (min-width: 320px) {
-  .section--buffered {
-    margin-bottom: 20px;
-  }
-}
-@media (min-width: 768px) {
-  .section--buffered {
-    margin-bottom: 100px;
-  }
+.section--alt {
+  margin: 0;
 }
 
 .section--thirds {
@@ -220,6 +217,10 @@ body {
 
 .section--intro__title-wrapper {
   transition: 0.3s;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 @media (min-width: 320px) {
   .section--intro__title-wrapper {
@@ -238,6 +239,7 @@ body {
   font-size: 36px;
   padding: 10px 0;
   letter-spacing: 3px;
+  width: 100%;
 }
 
 .section--intro__title__R {
@@ -245,12 +247,25 @@ body {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: .5px;
-  padding: 15px 0;
+  padding: 15px 30px 15px 0;
+  position: absolute;
 }
 
 .section--intro__title__L,
 .section--intro__title__R {
   text-align: center;
+}
+
+.button--fold {
+  position: absolute;
+  right: -25px;
+  bottom: 5px;
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 25px 0 25px;
+  border-color: #2f2e2e transparent transparent transparent;
 }
 
 .title--section-2 {

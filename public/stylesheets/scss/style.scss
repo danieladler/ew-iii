@@ -12,6 +12,7 @@ $x-x-large-screen: 1440px;
 $footer-height: 40px;
 $padding-margin-standard: 10px;
 $min-height-section: 400px;
+$width-button--fold: 30px;;
 // z-indexes
 $z-index-main: 1;
 $z-index-grain-overlay: 2;
@@ -103,15 +104,18 @@ body {
   height: 100%;
   opacity: 0.9;
   z-index: $z-index-grain-overlay;
-  // filter: brightness(50);
 }
 
-.main-content {
+.wrapper-main-content {
   height: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;
   flex: 1;
+  background-color: transparent;
+}
+
+.main-content {
+  position: relative;
   margin: 0 auto;
   max-width: 1000px;
   margin: 20px auto;
@@ -128,22 +132,16 @@ body {
   display: flex;
 }
 
+.section[data-section="foldable-first"] {
+  margin-top: 100px;
+}
+
+.section[data-section="foldable-last"] {
+
+}
+
 .section--alt {
   margin: 0;
-}
-
-.section--buffered {
-  @media(min-width: $small-screen) {
-    margin-bottom: 20px;
-  }
-
-  @media(min-width: $medium-screen) {
-    margin-bottom: 100px;
-  }
-}
-
-.section--tall {
-  // TBD
 }
 
 .section--thirds {
@@ -238,6 +236,8 @@ body {
 
 .section--intro__title-wrapper {
   transition: 0.3s;
+  display: flex;
+  justify-content: center;
 
   @media(min-width: $small-screen) {
     width: 100%;
@@ -254,6 +254,7 @@ body {
   font-size: 36px;
   padding: 10px 0;
   letter-spacing: 3px;
+  width: 100%;
 }
 
 .section--intro__title__R {
@@ -261,12 +262,25 @@ body {
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: .5px;
-  padding: 15px 0;
+  padding: 15px $width-button--fold 15px 0;
+  position: absolute;
 }
 
 .section--intro__title__L,
 .section--intro__title__R {
   text-align: center;
+}
+
+.button--fold {
+  position: absolute;
+  right: -25px;
+  bottom: 5 px;
+  z-index: $z-index-grain-overlay + 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 25px 0 25px;
+  border-color: $color-faded-black transparent transparent transparent;
 }
 
 ////////////// 2 - EW III Reveal classes //////////////
