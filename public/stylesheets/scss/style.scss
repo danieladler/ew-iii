@@ -16,13 +16,14 @@ $width-button--fold: 30px;;
 // z-indexes
 $z-index-main: 1;
 $z-index-grain-overlay: 2;
+$z-index-button: 3;
 $z-index-footer: 3;
 $z-index-modal: 998;
 $z-index-modal-close: 999;
 // transitions
 $common-transition: 0.3s;
 // colors
-$color-hover: gold;
+$color-hover: #DA5918;
 $color-pamphlet: #ffffff;
 $color-faded-black: #2f2e2e;
 
@@ -89,6 +90,12 @@ body {
   margin: 40px auto;
 }
 
+////////////// interaction //////////////
+
+.button {
+  z-index: $z-index-button;
+}
+
 ////////////// main content //////////////
 
 body {
@@ -103,7 +110,7 @@ body {
   width: 100%;
   height: 100%;
   opacity: 0.9;
-  z-index: $z-index-grain-overlay;
+  z-index: $z-index-button;
 }
 
 .wrapper-main-content {
@@ -425,13 +432,55 @@ body {
 ////////////// 5 - Full-width Image classes //////////////
 ////////////// 6 - Final Pamphlet Section classes //////////////
 
+.wrapper--final {
+  @media(max-width: $medium-screen) {
+    padding-bottom:40px;
+  }
+}
+
 .copy--final {
   padding-bottom: 50px;
 }
 
+.title--final,
+.button--final {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 40px;
+}
+
 .title--final {
-  @media(max-width: $medium-screen) {
-    padding-bottom:40px;
+  padding: 0 20px 0 0;
+  margin: 0;
+}
+
+.button--final {
+  width: 40px;
+  padding: 0 5px;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button--final:last-child {
+  border-left: 2px solid black;
+}
+
+.button--final__link {
+  z-index: $z-index-button;
+}
+
+.button--final__icon {
+  color: $color-faded-black;
+
+  &:hover {
+    color: $color-hover;
   }
 }
 
