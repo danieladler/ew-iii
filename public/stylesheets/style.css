@@ -308,6 +308,12 @@ body {
   border-style: solid;
   border-width: 25px 25px 0 25px;
   border-color: #2f2e2e transparent transparent transparent;
+  background-color: transparent;
+  padding: 0;
+}
+
+.button--fold:hover {
+  cursor: pointer;
 }
 
 .shake {
