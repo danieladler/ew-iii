@@ -1,0 +1,119 @@
+////////////// generic block/element/modifier classes //////////////
+
+.section {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+}
+
+.section[data-section="foldable-first"] {
+  @media(min-width: $mobile-medium-midpoint) {
+    margin-top: 100px;
+  }
+}
+
+.section[data-section="foldable-last"] {
+  margin-bottom: 100px;
+}
+
+.section--alt {
+  margin: 0;
+}
+
+.section--thirds {
+  justify-content: space-between;
+
+  @media(min-width: $mobile-medium-midpoint) {
+    max-height: 325px;
+  }
+}
+
+.section--mobile-collapse {
+  transition: 0.3s;
+
+  @media(min-width: $small-screen) {
+    flex-direction: column;
+  }
+
+  @media(min-width: $mobile-medium-midpoint) {
+    flex-direction: row;
+  }
+}
+
+.section--medium-collapse {
+  transition: 0.3s;
+
+  @media(min-width: $small-screen) {
+    flex-direction: column;
+  }
+
+  // @media(min-width: $mobile-medium-midpoint) {
+  @media(min-width: $medium-screen) {
+    flex-direction: row;
+  }
+}
+
+.subsection[data-subsection="subsection--last"] {
+  @media(min-width: $medium-screen) {
+    padding-right: 40px;
+  }
+}
+
+.subsection {
+  transition: 0.3s;
+
+  @media(min-width: $small-screen) {
+    width: 100%;
+  }
+}
+
+.subsection--33pct {
+  // TBD
+}
+
+.subsection--40pct {
+  @media(min-width: $mobile-medium-midpoint) {
+    width: 40%;
+  }
+}
+
+.subsection--50pct {
+  @media(min-width: $mobile-medium-midpoint) {
+    width: 50%;
+  }
+}
+
+.subsection--60pct {
+  @media(min-width: $mobile-medium-midpoint) {
+    width: 60%;
+  }
+
+  @media(max-width: $medium-screen) {
+    min-width: 387px;
+  }
+}
+
+.subsection--100pct {
+  width: 100%;
+}
+
+.section__image {
+  width: 100%;
+  height: 100%;
+}
+
+.underlay-image-wrapper {
+  position: relative;
+}
+
+.underlay-image-wrapper__underlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: skyblue;
+  z-index: -1;
+}

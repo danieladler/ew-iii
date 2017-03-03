@@ -1,0 +1,52 @@
+////////////// typography //////////////
+
+.serif {
+  text-transform: uppercase;
+  font-family: "Quattrocento";
+  font-weight: bold;
+}
+
+.title,
+.copy {
+  padding: 10px;
+  transition: 0.3s;
+  color: $color-faded-black;
+
+  @media(min-width: $medium-screen) {
+    margin: 10px 0px;
+  }
+}
+
+.title {
+  font-size: 20px;
+  letter-spacing: 2.25px;
+
+  @media(min-width: $large-screen) {
+    font-size: 24px;
+  }
+}
+
+.copy {
+  font-size: 14px;
+  font-family: "Montserrat", serif;
+  letter-spacing: .25px;
+  line-height: 1.5;
+
+  @media(min-width: $large-screen) {
+    font-size: 18px;
+  }
+}
+
+.copy-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 0 20px;
+}
+
+.hr--50pct {
+  width: 50%;
+  margin: 40px auto;
+}

@@ -1,14 +1,3 @@
-body {
-  margin: 0;
-  padding: 0;
-  min-width: 320px;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 100vh;
-  -ms-flex-direction: column;
-      flex-direction: column;
-}
-
 .serif {
   text-transform: uppercase;
   font-family: "Quattrocento";
@@ -68,11 +57,15 @@ body {
   margin: 40px auto;
 }
 
-.button {
-  z-index: 3;
-}
-
 body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -ms-flex-direction: column;
+      flex-direction: column;
   background-image: url("https://s3-us-west-2.amazonaws.com/ew-iii/wood_pattern.png");
 }
 
@@ -451,6 +444,11 @@ body {
 .title--final {
   padding: 0 20px 0 0;
   margin: 0;
+}
+@media (max-width: 412px) {
+  .title--final {
+    font-size: 16px;
+  }
 }
 
 .button--final {

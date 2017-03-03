@@ -1,0 +1,28 @@
+////////////// settings //////////////
+// responsive settings
+$small-screen: 320px;
+$large-mobile: 412px;
+$mobile-medium-midpoint: 700px;
+$medium-screen: 768px;
+$medium-plus-screen: 818px;
+$large-screen: 1024px;
+$x-large-screen: 1194px;
+$x-x-large-screen: 1440px;
+// constants for spatial relationships
+$footer-height: 40px;
+$padding-margin-standard: 10px;
+$min-height-section: 400px;
+$width-button--fold: 30px;;
+// z-indexes
+$z-index-main: 1;
+$z-index-grain-overlay: 2;
+$z-index-button: 3;
+$z-index-footer: 3;
+$z-index-modal: 998;
+$z-index-modal-close: 999;
+// transitions
+$common-transition: 0.3s;
+// colors
+$color-hover: #DA5918;
+$color-pamphlet: #ffffff;
+$color-faded-black: #2f2e2e;
